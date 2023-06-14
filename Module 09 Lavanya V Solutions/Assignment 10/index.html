@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--internal CSS dor DIV tags-->
+    <style>
+        div{
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <form ID="formSection" method="post">
+        <div>
+            <label>First Name :</label>
+            <input ID="firstName" type="text" placeholder="Enter your first name"/>
+        </div>
+        <div>
+            <label>Last Name :</label>
+            <input ID="lastName" type="text" placeholder="Enter your last name"/>
+        </div>
+
+        <div>
+            <label>Email :</label>
+            <input ID="Email" type="Email" placeholder="Enter your email"/>
+        </div>
+        <div>
+            <label>City :</label>
+            <select ID="City">
+                <option value="Mumbai">Mumbai</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+            </select>
+            
+        </div>
+        <div>
+            <label>Gender</label>
+            <input ID="Gender" type="radio" value="Male" name ="Male"/>
+            <label>Male</label>
+            <input ID="Gender" type="radio" value="Female" name ="Female"/>
+            <label>Female</label>
+            <input ID="Gender" type="radio" value="Other" name ="Other"/>
+            <label>Other</label>
+        </div>
+        <div>
+            <input type="button" value="submit" onclick="submitData()"/>
+        </div>
+    </form>
+    
+    <script src="/Assignment 10/index.js" type="text/javascript"></script>
+</body>
+</html>
