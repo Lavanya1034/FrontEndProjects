@@ -1,0 +1,22 @@
+
+body{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: lightgray;
+    
+    
+    
+}
+
+div{
+    
+    border-radius: 20px;
+    background-color: white;
+    padding-left: 30px;
+    width:30%;
+    margin:5px;
+    padding-bottom: 30px;
+    
+}

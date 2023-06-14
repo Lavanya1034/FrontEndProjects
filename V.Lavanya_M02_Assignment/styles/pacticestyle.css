@@ -1,0 +1,15 @@
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.next{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.para{
+    font-size: 30px;
+}
