@@ -65,9 +65,13 @@ const deleteParticularTask=()=>{
         element.addEventListener("click",()=>{
             let parentOfDeleteBtn = element.parentElement;
             ulTag.removeChild(parentOfDeleteBtn);
+
+            let listNumbering = document.querySelectorAll(".todo-item");
+            listNumbering.forEach((element,index)=>{
+                element.textContent= `${index+1}.${(element.textContent).substring(2)}`
+        })      
         })
     })
-
 }
 
 //add tasks 
