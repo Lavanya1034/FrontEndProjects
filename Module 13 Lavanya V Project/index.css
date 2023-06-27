@@ -4,8 +4,13 @@ body{
 h1{
     text-align: center;
 }
+.inpText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 textarea{
-    margin-left: 350px;
     background-color: white;
 }
 .btn{
