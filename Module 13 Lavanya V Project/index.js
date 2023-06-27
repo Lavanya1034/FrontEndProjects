@@ -3,7 +3,6 @@ let priorityTask = document.querySelector("#priorityTask");
 let deleteTask = document.querySelector("#deleteTasks");
 let inputValue = document.querySelector("#inputText");
 let ulTag = document.querySelector(".listItems");
-let childCount = document.querySelector("ul")
 //flag to check whether it is priority task adding
 let prior = false;
 
@@ -12,12 +11,10 @@ const listForming = (content)=>{
     divTag.setAttribute("class","todo");
     let liItem = document.createElement("li");
     liItem.setAttribute("class","todo-item");
-    // let para = document.createElement("p");
-    // para.textContent=inputValue.value;
     if(prior){
         liItem.innerHTML=`1. ${content}`;
     }else{
-        liItem.innerHTML=`${childCount.childElementCount+1}. ${content}`;
+        liItem.innerHTML=`${ulTag.childElementCount+1}. ${content}`;
     }
     
     divTag.appendChild(liItem);
@@ -37,7 +34,8 @@ const listForming = (content)=>{
             let no =listText.substring(0,1);
             no++;
             element.textContent= `${no}.${listText.substring(2)}`
-        })        
+        }) 
+        prior=false;   //reset as next event can be anything     
     }
     return divTag;
 }
