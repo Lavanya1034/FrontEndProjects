@@ -6,11 +6,13 @@ let ulTag = document.querySelector(".listItems");
 //flag to check whether it is priority task adding
 let prior = false;
 
+//function for formation of list and appending to ul tags
 const listForming = (content)=>{
     let divTag = document.createElement("div");
     divTag.setAttribute("class","todo");
     let liItem = document.createElement("li");
     liItem.setAttribute("class","todo-item");
+    //for priority task added, it should be the first task- so seeting its no to 1st
     if(prior){
         liItem.innerHTML=`1. ${content}`;
     }else{
@@ -31,9 +33,8 @@ const listForming = (content)=>{
         let listNumbering = document.querySelectorAll(".todo-item");
         listNumbering.forEach((element,index)=>{
             let listText = element.textContent;
-            let no =listText.substring(0,1);
-            no++;
-            element.textContent= `${no}.${listText.substring(2)}`
+            //changing the numbering to next num as priority task is added at first.
+            element.textContent= `${index+2}.${listText.substring(2)}`
         }) 
         prior=false;   //reset as next event can be anything     
     }
@@ -113,11 +114,3 @@ deleteTask.addEventListener("click",()=>{
     childTotal.forEach(element => {ulTag.removeChild(element);
    });                
 })
-
-
-
-
-
-
-
-
