@@ -28,28 +28,37 @@ h1{
     width:400px;
     height:400px;
     background-color: #eee;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .formDiv{
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .input{
     border: #ccc;
     width:300px;
     height:20px;
     border-radius: 10px;
-    font-size: 10px;
+    font-size: 12px;
+    padding:8px;
 }
 #nameErr,#emailErr,#passErr,#conPassErr{
     color: red;
 }
 
-button{
-    background-color: blue;
+#btn{
+    background-color: red;
     color:white;
-    border-radius: 20px;
-    padding:5px 15px;
-    border:none;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    
+}
+
+#btn:hover{
+    cursor: pointer;
+    background-color: green;
+}
+input:focus{
+    color: blue;
 }
