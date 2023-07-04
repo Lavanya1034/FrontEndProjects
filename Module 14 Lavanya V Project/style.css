@@ -1,0 +1,55 @@
+body{
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:10px;
+}
+
+h1{
+    text-align: center;
+}
+
+#formSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    height:500px;
+    width:700px;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:400px;
+    height:400px;
+    background-color: #eee;
+    border-radius: 20px;
+}
+.formDiv{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.input{
+    border: #ccc;
+    width:300px;
+    height:20px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+#nameErr,#emailErr,#passErr,#conPassErr{
+    color: red;
+}
+
+button{
+    background-color: blue;
+    color:white;
+    border-radius: 20px;
+    padding:5px 15px;
+    border:none;
+}
