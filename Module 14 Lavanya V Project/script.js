@@ -5,8 +5,20 @@ let nameErr = document.getElementById("nameErr");
 let emailErr = document.getElementById("emailErr");
 let passErr = document.getElementById("passErr");
 let conPassErr = document.getElementById("conPassErr");
+let input=document.querySelectorAll(".input");
 
-let input=document.querySelectorAll(".input")
+//autofocusing to next input field
+input.forEach((inp,index)=>{
+    inp.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+            if(index !==4){
+                e.preventDefault();
+                input[index+1].focus();
+            };
+            ;
+        }
+    })
+ })
 
 //function to validate values in form
 
@@ -17,7 +29,6 @@ function validation(forminp){
     let regex= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     let passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$/;
     
-    console.log(forminp.name)
     if(!forminp.name){
         error.name="Name cannot be empty.";
     }else{
@@ -36,7 +47,6 @@ function validation(forminp){
             error.email="Please enter valid email";
         }
     }
-    
     //validation for password
     if(!forminp.password){
         error.password="Password cannot be empty.";
@@ -46,41 +56,30 @@ function validation(forminp){
         }else if(!passRegex.test(forminp.password) ){
             error.password="Please enter valid password";
     }
-
+    }
     if(forminp.conPass !==forminp.password){
         error.conPass="Passwords don't match.";
     }
     return error;
-
-}
 }
 
-
-
+//when form is submitted
 form.addEventListener("submit",(event)=>{
+    //prevent to refresh when we press enter
     event.preventDefault();
     let formVal = event.target;
     //changing to array
     let formArr = Array.from(formVal);
 
-    //autofucing to nect input field
-    formArr.forEach((inp,index)=>{
-        inp.addEventListener("keydown",(e)=>{
-            if(e.key==="Enter"){
-                formArr[index+1].focus();
-            }
-        })
-     })
-   
-
     //create a obj with input values of form and can validate
+
     let formObj={
         name:formArr[0].value,
         email:formArr[1].value,
         password:formArr[2].value,  
         conPass:formArr[3].value
     }
-
+    
     let errors = validation(formObj);
 
     if(Object.keys(errors).length>0){
@@ -89,8 +88,15 @@ form.addEventListener("submit",(event)=>{
         passErr.textContent=errors.password || "";
         conPassErr.textContent=errors.conPass || "";
 
+        formArr.forEach((inp,index)=>{
+            inp.addEventListener("change",(e)=>{
+                let spans = document.querySelectorAll(".err");
+                spans[index].textContent="";               
+                
+            })
+        })
     }else{
-        //reset the error texts which is obtained previosly if any.
+        //reset the error texts which is obtained previously if any.
         nameErr.textContent="";
         emailErr.textContent="";
         passErr.textContent="";
