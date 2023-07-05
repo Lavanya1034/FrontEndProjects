@@ -106,6 +106,10 @@ form.addEventListener("submit",(event)=>{
         //windown.location.href="signup.html";
 
         //to open in new page
-        window.open("signup.html","_blank");
+       window.open("signup.html","_blank");
+        //to refresh the initial parent page after some time
+        setTimeout(()=>{
+            location.reload();
+        },1000);      
     }
 })
