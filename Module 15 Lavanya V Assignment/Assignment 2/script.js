@@ -5,11 +5,13 @@ class stack {
     this.movieCast = [];
   }
 
-  addNewCastMember(member) {
+  //adding new member
+  add(member) {
     this.movieCast.push(member);
     return;
   }
 
+  //display method
   showCast() {
     console.log("Movie cast member names are : ")
     this.movieCast.forEach((mem) => {
@@ -31,7 +33,7 @@ do {
     //get the input from user
     let name1 = window.prompt("Enter the Movie Cast Member");
     if (name1) {
-      movie.addNewCastMember(name1);
+      movie.add(name1);
       console.log("The movie cast member stack consist of : ");
       console.log(movie.movieCast);
     }else{
