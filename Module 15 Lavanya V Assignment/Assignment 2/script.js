@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //Movie cast section using stack
 
 class stack {
