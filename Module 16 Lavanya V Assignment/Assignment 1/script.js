@@ -15,14 +15,14 @@ btn.addEventListener("click",()=>{
         if(billAmnt>5000){
             //applying 20% discount
             disAmnt= billAmnt*0.2;
-            console.log(`The discound applicable is 20%`);
+            console.log(`The discount applicable is 20%`);
         }else if(billAmnt>3000){
             disAmnt= billAmnt*0.15;
-            console.log(`The discound applicable is 15%`);
+            console.log(`The discount applicable is 15%`);
         }
         else if(billAmnt>2000){
             disAmnt= billAmnt*0.10;
-            console.log(`The discound applicable is 10%`);
+            console.log(`The discount applicable is 10%`);
         }
         billAmnt= billAmnt-disAmnt; 
         totalAmnt.textContent = `The total bill amount is ${billAmnt.toFixed(2)}`;

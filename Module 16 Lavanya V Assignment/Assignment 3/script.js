@@ -30,14 +30,15 @@ function productIdFound(arr,id){
 }
 
 btn.addEventListener("click",()=>{
-    if(key.value){
-        let pos = productIdFound(productId,key.value);
+    let inp = parseInt(key.value);
+    if(inp){
+        let pos = productIdFound(productId,inp);
         if(pos !== -1){
-            console.log(`The position of product with ID ${key.value} is ${pos}`);
-            res.textContent = `The position of product with ID ${key.value} is ${pos}`;
+            console.log(`The position of product with ID ${inp} is ${pos}`);
+            res.textContent = `The position of product with ID ${inp} is ${pos}`;
         }else{
-            console.log(`The Product with ID ${key.value} is not found`);
-            res.textContent= `The Product with ID ${key.value} is not found`;
+            console.log(`The Product with ID ${inp} is not found`);
+            res.textContent= `The Product with ID ${inp} is not found`;
         }
 
     }

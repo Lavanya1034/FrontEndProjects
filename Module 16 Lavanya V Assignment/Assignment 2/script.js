@@ -11,7 +11,7 @@ btn = document.getElementById("btn");
 function roomNo(arr, key) {
     if(arr){
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] === key) {
+            if (arr[i] == key) {
               return i;
             }
           }
@@ -25,13 +25,13 @@ function roomNo(arr, key) {
 }
 
 btn.addEventListener("click", () => {
-  if (key.value) {
-
-    let no = roomNo(keyId, key.value);
-
+  let input = parseInt(key.value);
+  if (input) {
+    let no = roomNo(keyId, input);
+    console.log(no)
     if (no !== -1) {
-      res.textContent = `The position of the key ${key.value} to unlock room is ${no}`;
-      console.log(`The position of the key ${key.value} to unlock room is ${no}`);
+      res.textContent = `The position of the key ${input} to unlock room is ${no}`;
+      console.log(`The position of the key ${input} to unlock room is ${no}`);
     } else {
       res.textContent = "The key is not found";
       console.log("The key is not found");
