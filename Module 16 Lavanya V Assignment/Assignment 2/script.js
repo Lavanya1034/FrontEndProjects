@@ -11,7 +11,7 @@ btn = document.getElementById("btn");
 function roomNo(arr, key) {
     if(arr){
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] == key) {
+            if (arr[i] === key) {
               return i;
             }
           }
