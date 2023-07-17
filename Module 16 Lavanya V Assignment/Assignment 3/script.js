@@ -37,8 +37,8 @@ btn.addEventListener("click",()=>{
             console.log(`The position of product with ID ${inp} is ${pos}`);
             res.textContent = `The position of product with ID ${inp} is ${pos}`;
         }else{
-            console.log(`The Product with ID ${inp} is not found`);
-            res.textContent= `The Product with ID ${inp} is not found`;
+            console.log(`Out of stock`);
+            res.textContent= `Out of stock`;
         }
 
     }

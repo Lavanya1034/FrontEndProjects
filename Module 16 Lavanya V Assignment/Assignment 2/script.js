@@ -28,7 +28,6 @@ btn.addEventListener("click", () => {
   let input = parseInt(key.value);
   if (input) {
     let no = roomNo(keyId, input);
-    console.log(no)
     if (no !== -1) {
       res.textContent = `The position of the key ${input} to unlock room is ${no}`;
       console.log(`The position of the key ${input} to unlock room is ${no}`);
