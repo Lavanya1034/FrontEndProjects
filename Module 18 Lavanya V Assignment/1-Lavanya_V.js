@@ -3,7 +3,8 @@
 let competitions = [
     ["HTML", "C#"],
     ["C#", "Python"],
-    ["Python","HTML"],
+    ["Python","HTML"]
+    
     ]
 
 let results = [0,0,1];
@@ -15,9 +16,15 @@ let results = [0,0,1];
 
 function winner(comp,res){
     let counts = {};
-    if(competitions.length == results.length){
+    if(!comp || !res || !comp.length>0 || !res.length>0){
+        return "Tournament inputs are missing";
+    }
+    if(comp.length == res.length){
        
         for(let i=0;i<res.length;i++){
+            if(comp[i][0].length>30 || comp[i][1].length>30){
+                return "Team name should be at most 30 characters in length";
+            }
             if(res[i]===1){
                 if(counts.hasOwnProperty(comp[i][0])){
                     counts[comp[i][0]]=counts[comp[i][0]]+3;
@@ -45,10 +52,11 @@ function winner(comp,res){
         return keys[values.indexOf(win)];
 
 
+    }else{
+        return "Please enter equal number of competitions and results accordingly";
     }
     
 }
-
 console.log(winner(competitions,results));
     
  
