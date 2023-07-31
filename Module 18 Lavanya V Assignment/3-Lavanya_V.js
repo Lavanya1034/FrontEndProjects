@@ -1,16 +1,18 @@
 //Move Element to the End
 
 
-//insertion sort
+//insertion sort algorithm is applied
 
-//time complexity for this code is O(n^2)-as 2 for loops are executed.
+//time complexity for this code is O(n^2)-as 2 for loops are executed.("arr1.length" times)
 //Space Complexity for this code is O(1).- Only auxillary space (currentVal) is used 
 //                                         and array is mutated itself.
 
+let arr = [2, 1, 2, 2, 2, 3, 4, 2];
+let move =2;
 
 function moveNo(arr1,moveNum){
     if(!arr1 || !moveNum){
-        return "Input is missing";
+        return "Input is missing"; //edge case handling
     }else{
         for(let i=arr1.length-2;i>=0;i--){
             if(arr1[i]===moveNum){
@@ -19,51 +21,18 @@ function moveNo(arr1,moveNum){
                         let currentVal=arr1[j];
                         arr1[j]=arr1[j-1];
                         arr1[j-1]=currentVal;
-                    }
-                    
-                }    
-    
-            }
-            
+                    }                  
+                }     
+            }    
         }
         return arr1;
-
     }   
-
 }
-
-console.log(moveNo([2, 1, 2, 2, 2, 3, 4, 2],2));
-
-
-
-
-
-// let arrToMove =  [2, 1, 2, 2, 2, 3, 4, 2];
-// let move = 2;
-
-// //using Bubble sort algorithm
-
-// function moveNo(arr,moveNum){
-//     let end =arr.length-1; 
-//     for(let i=0;i<arr.length && i<end ;i++){
-//         if(arr[i]==moveNum){     
-//             for(let j=end;j>=0;j--){
-//                 if(arr[j]!==2 && i<j){
-//                     let temp =arr[j];
-//                     arr[j]=arr[i];
-//                     arr[i]=temp;
-//                     end--;
-//                     break;
-//                 }
-//             }
-//         }
-//     }
-//     return arr;
-// }
-
-// console.log(moveNo(arrToMove,move))
-
-
+console.log("The input array is :");
+console.log(arr);
+console.log(`The number need to be moved to end is : ${move}`);
+console.log("The final mutated array is : ");
+console.log(moveNo(arr,move));
 
 
 
