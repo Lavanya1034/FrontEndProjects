@@ -9,7 +9,7 @@ let competitions = [
 
 let results = [0,0,1];
 
-//Time complexity for this code is O(N*M)- as 2 loops are executed "res.length*values.length" times.
+//Time complexity for this code is O(N+M)- as 2 loops are executed "res.length+values.length" times.
 //Space complexity for this code is O(M)- as Object is being used to store the score count for each 
 //                                        competitor. And it increases when input increases.
 
@@ -58,6 +58,11 @@ function winner(comp,res){
     }
     
 }
+console.log("The input competitions are: ");
+console.log(competitions);
+console.log("The results given are :");
+console.log(results);
+console.log("The winner is :");
 console.log(winner(competitions,results));
     
  
